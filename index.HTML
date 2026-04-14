@@ -1,0 +1,691 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>جدول تمارين أسبوعي</title>
+  <style>
+    *{
+      box-sizing:border-box;
+      margin:0;
+      padding:0;
+    }
+
+    html{
+      scroll-behavior:smooth;
+    }
+
+    body{
+      font-family:Tahoma, Arial, sans-serif;
+      background:linear-gradient(180deg,#0f172a,#111827,#1f2937);
+      color:#fff;
+      line-height:1.8;
+      padding:20px;
+    }
+
+    .container{
+      max-width:1400px;
+      margin:auto;
+    }
+
+    .hero{
+      background:linear-gradient(135deg,#1d4ed8,#0f766e);
+      padding:25px;
+      border-radius:24px;
+      margin-bottom:25px;
+      box-shadow:0 10px 30px rgba(0,0,0,.25);
+      text-align:center;
+    }
+
+    .hero h1{
+      font-size:36px;
+      margin-bottom:8px;
+    }
+
+    .hero p{
+      color:#e5e7eb;
+      font-size:18px;
+    }
+
+    .nav-days{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      justify-content:center;
+      margin-bottom:25px;
+    }
+
+    .nav-days a{
+      text-decoration:none;
+      padding:10px 16px;
+      background:linear-gradient(135deg,#2563eb,#0ea5e9);
+      color:#fff;
+      border-radius:12px;
+      font-size:15px;
+      transition:.3s;
+      box-shadow:0 6px 18px rgba(0,0,0,.2);
+    }
+
+    .nav-days a:hover{
+      transform:translateY(-2px);
+      background:linear-gradient(135deg,#1d4ed8,#06b6d4);
+    }
+
+    .day-section{
+      margin-bottom:35px;
+      background:rgba(255,255,255,.05);
+      border:1px solid rgba(255,255,255,.08);
+      border-radius:24px;
+      padding:20px;
+      box-shadow:0 10px 25px rgba(0,0,0,.15);
+      scroll-margin-top:20px;
+    }
+
+    .day-title{
+      font-size:28px;
+      color:#facc15;
+      margin-bottom:18px;
+      border-right:5px solid #38bdf8;
+      padding-right:12px;
+    }
+
+    .cards-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+      gap:18px;
+    }
+
+    .card{
+      background:rgba(255,255,255,.06);
+      border:1px solid rgba(255,255,255,.08);
+      border-radius:20px;
+      overflow:hidden;
+      box-shadow:0 8px 20px rgba(0,0,0,.18);
+    }
+
+    .img-placeholder{
+      width:100%;
+      height:220px;
+      object-fit:cover;
+      border-bottom:1px solid rgba(255,255,255,.08);
+      display:block;
+      background:linear-gradient(135deg, rgba(255,255,255,.06), rgba(255,255,255,.02));
+    }
+
+    .card-body{
+      padding:15px;
+    }
+
+    .field{
+      border:2px dashed rgba(255,255,255,.20);
+      border-radius:12px;
+      padding:12px;
+      margin-bottom:10px;
+      min-height:48px;
+      color:#cbd5e1;
+      background:rgba(255,255,255,.03);
+    }
+
+    .field.large{
+      min-height:70px;
+    }
+
+    .video-box{
+      margin-top:20px;
+      background:rgba(255,255,255,.06);
+      border:2px dashed rgba(56,189,248,.45);
+      border-radius:20px;
+      padding:16px;
+    }
+
+    .video-placeholder{
+      width:100%;
+      height:280px;
+      border-radius:16px;
+      background:linear-gradient(135deg, rgba(255,255,255,.06), rgba(255,255,255,.02));
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      color:#94a3b8;
+      font-size:20px;
+    }
+
+    .footer{
+      text-align:center;
+      color:#cbd5e1;
+      padding:20px;
+      margin-top:20px;
+    }
+
+    @media (max-width:768px){
+      body{
+        padding:10px;
+      }
+
+      .hero{
+        padding:15px;
+      }
+
+      .hero h1{
+        font-size:22px;
+      }
+
+      .hero p{
+        font-size:13px;
+      }
+
+      .day-title{
+        font-size:18px;
+      }
+
+      .cards-grid{
+        grid-template-columns:1fr;
+      }
+
+      .img-placeholder{
+        height:140px;
+      }
+
+      .video-placeholder{
+        height:160px;
+      }
+
+      .nav-days a{
+        font-size:13px;
+        padding:8px 12px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+
+    <section class="hero">
+      <h1>جدول تمارين أسبوعي</h1>
+      <p>أضف فقط اسم الصورة والكتابة داخل كل بطاقة</p>
+    </section>
+
+    <div class="nav-days">
+      <a href="#sat">السبت</a>
+      <a href="#sun">الأحد</a>
+      <a href="#mon">الاثنين</a>
+      <a href="#tue">الثلاثاء</a>
+      <a href="#wed">الأربعاء</a>
+      <a href="#thu">الخميس</a>
+    </div>
+
+    <!-- السبت -->
+    <section class="day-section" id="sat">
+      <h2 class="day-title">السبت</h2>
+      <div class="cards-grid">
+
+        <div class="card">
+          <img src="c:\Users\PC\OneDrive\Pictures\تمرين محمود\WhatsApp Image 2026-04-11 at 9.07.03 PM.jpeg" class="img-placeholder">
+          <div class="card-body">
+            <div class="field">بطن جهاز</div>
+            <div class="field large">بطن و ضهر</div>
+            <div class="field">4</div>
+            <div class="field">15</div>
+          </div>
+        </div>
+
+        <div class="card">
+          <img src="c:\Users\PC\OneDrive\Pictures\تمرين محمود\WhatsApp Image 2026-04-11 at 9.07.06 PM (1).jpeg" class="img-placeholder">
+          <div class="card-body">
+            <div class="field">بطن حركة</div>
+            <div class="field large">البطن</div>
+            <div class="field">4</div>
+            <div class="field">12</div>
+          </div>
+        </div>
+
+        <div class="card">
+          <img src="c:\Users\PC\OneDrive\Pictures\تمرين محمود\WhatsApp Image 2026-04-11 at 9.07.06 PM.jpeg" class="img-placeholder">
+          <div class="card-body">
+            <div class="field">رفع رجل</div>
+            <div class="field large">اسفل ضهر و بطن وفخذ</div>
+            <div class="field">4</div>
+            <div class="field">15</div>
+          </div>
+        </div>
+
+        <div class="card">
+          <img src="c:\Users\PC\OneDrive\Pictures\تمرين محمود\WhatsApp Image 2026-04-11 at 9.07.07 PM (1).jpeg" class="img-placeholder">
+          <div class="card-body">
+            <div class="field">بلانك</div>
+            <div class="field large">شد البطن والارداف</div>
+            <div class="field">3</div>
+            <div class="field">10ث</div>
+          </div>
+        </div>
+
+        <div class="card">
+          <img src="c:\Users\PC\OneDrive\Pictures\تمرين محمود\WhatsApp Image 2026-04-11 at 9.07.07 PM (2).jpeg" class="img-placeholder">
+          <div class="card-body">
+            <div class="field">ضهر جهاز</div>
+            <div class="field large">ضهر</div>
+            <div class="field">4</div>
+            <div class="field">15</div>
+          </div>
+        </div>
+
+        <div class="card">
+          <img src="c:\Users\PC\OneDrive\Pictures\تمرين محمود\WhatsApp Image 2026-04-11 at 9.07.07 PM (3).jpeg" class="img-placeholder">
+          <div class="card-body">
+            <div class="field">اوبتيكال</div>
+            <div class="field large">جسم كامل</div>
+            <div class="field">1</div>
+            <div class="field">15د</div>
+          </div>
+        </div>
+
+        <div class="card">
+          <img src="c:\Users\PC\OneDrive\Pictures\تمرين محمود\WhatsApp Image 2026-04-11 at 9.07.07 PM (4).jpeg" class="img-placeholder">
+          <div class="card-body">
+            <div class="field">جهاز مشي</div>
+            <div class="field large">سير</div>
+            <div class="field">1</div>
+            <div class="field">15د</div>
+          </div>
+        </div>
+
+        <div class="card">
+          <img src="c:\Users\PC\OneDrive\Pictures\تمرين محمود\WhatsApp Image 2026-04-11 at 9.07.07 PM.jpeg" class="img-placeholder">
+          <div class="card-body">
+            <div class="field">اسفل ضهر</div>
+            <div class="field large">عضله الارداف والضهر</div>
+            <div class="field">4</div>
+            <div class="field">10</div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- الأحد -->
+    <section class="day-section" id="sun">
+      <h2 class="day-title">الأحد</h2>
+      <div class="cards-grid">
+
+        <div class="card">
+          <img src="c:\Users\PC\OneDrive\Pictures\تمرين محمود\WhatsApp Image 2026-04-11 at 9.07.07 PM (12).jpeg" class="img-placeholder">
+          <div class="card-body">
+            <div class="field">صدر</div>
+            <div class="field large">صدر وباي</div>
+            <div class="field">4</div>
+            <div class="field">12</div>
+          </div>
+        </div>
+
+        <div class="card">
+          <img src="c:\Users\PC\OneDrive\Pictures\تمرين محمود\WhatsApp Image 2026-04-11 at 9.07.07 PM (13).jpeg" class="img-placeholder">
+          <div class="card-body">
+            <div class="field">كتف</div>
+            <div class="field large">كتف+باي+صدر</div>
+            <div class="field">4</div>
+            <div class="field">12</div>
+          </div>
+        </div>
+
+        <div class="card">
+          <img src="c:\Users\PC\OneDrive\Pictures\تمرين محمود\WhatsApp Image 2026-04-11 at 9.07.07 PM (14).jpeg" class="img-placeholder">
+          <div class="card-body">
+            <div class="field">سحب تراي</div>
+            <div class="field large">عضلة تراي</div>
+            <div class="field">4</div>
+            <div class="field">15</div>
+          </div>
+        </div>
+
+        <div class="card">
+          <img src="c:\Users\PC\OneDrive\Pictures\تمرين محمود\WhatsApp Image 2026-04-11 at 9.07.07 PM (15).jpeg" class="img-placeholder">
+          <div class="card-body">
+            <div class="field">سحب كتف</div>
+            <div class="field large">كتف+تراي+صدر</div>
+            <div class="field">4</div>
+            <div class="field">15</div>
+          </div>
+        </div>
+
+        <div class="card">
+          <img src="c:\Users\PC\OneDrive\Pictures\تمرين محمود\WhatsApp Image 2026-04-11 at 9.07.07 PM (16).jpeg" class="img-placeholder">
+          <div class="card-body">
+            <div class="field">تراي</div>
+            <div class="field large">عضل تراي</div>
+            <div class="field">4</div>
+            <div class="field">15</div>
+          </div>
+        </div>
+
+        <div class="card">
+          <img src="c:\Users\PC\OneDrive\Pictures\تمرين محمود\WhatsApp Image 2026-04-11 at 9.07.07 PM (17).jpeg" class="img-placeholder">
+          <div class="card-body">
+            <div class="field">باي</div>
+            <div class="field large">عضلة الباي</div>
+            <div class="field">4</div>
+            <div class="field">15</div>
+          </div>
+        </div>
+
+        <div class="card">
+          <img src="c:\Users\PC\OneDrive\Pictures\تمرين محمود\WhatsApp Image 2026-04-11 at 9.07.07 PM (18).jpeg" class="img-placeholder">
+          <div class="card-body">
+            <div class="field">عقلة</div>
+            <div class="field large">زيادة الطول</div>
+            <div class="field">4</div>
+            <div class="field">5ث</div>
+          </div>
+        </div>
+
+      <div class="card">
+          <img src="c:\Users\PC\OneDrive\Pictures\تمرين محمود\hometrainer-life-fitness-r1-liegend.jpg" class="img-placeholder">
+          <div class="card-body">
+            <div class="field">بايسكل</div>
+            <div class="field large">فخذ</div>
+            <div class="field">1</div>
+            <div class="field">15د</div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- الاثنين -->
+    <section class="day-section" id="mon">
+      <h2 class="day-title">الاثنين</h2>
+      <div class="cards-grid">
+
+        <div class="card">
+          <img src="c:\Users\PC\OneDrive\Pictures\تمرين محمود\WhatsApp Image 2026-04-11 at 9.07.07 PM (5).jpeg" class="img-placeholder">
+          <div class="card-body">
+            <div class="field">سحب رجل خلفي</div>
+            <div class="field large">عضل الساق والفخذ</div>
+            <div class="field">4</div>
+            <div class="field">12</div>
+          </div>
+        </div>
+
+        <div class="card">
+          <img src="c:\Users\PC\OneDrive\Pictures\تمرين محمود\WhatsApp Image 2026-04-11 at 9.07.07 PM (6).jpeg" class="img-placeholder">
+          <div class="card-body">
+            <div class="field">سحب رجل امامي</div>
+            <div class="field large">فخذ</div>
+            <div class="field">4</div>
+            <div class="field">12</div>
+          </div>
+        </div>
+
+        <div class="card">
+          <img src="c:\Users\PC\OneDrive\Pictures\تمرين محمود\WhatsApp Image 2026-04-11 at 9.07.07 PM (7).jpeg" class="img-placeholder">
+          <div class="card-body">
+            <div class="field">دفع ساق</div>
+            <div class="field large">فخذ + بطن</div>
+            <div class="field">4</div>
+            <div class="field">15</div>
+          </div>
+        </div>
+
+        <div class="card">
+          <img src="c:\Users\PC\OneDrive\Pictures\تمرين محمود\WhatsApp Image 2026-04-11 at 9.07.07 PM (9).jpeg" class="img-placeholder">
+          <div class="card-body">
+            <div class="field">رفع اصابع</div>
+            <div class="field large">عضلة الساق</div>
+            <div class="field">4</div>
+            <div class="field">15</div>
+          </div>
+        </div>
+
+        <div class="card">
+          <img src="c:\Users\PC\OneDrive\Pictures\تمرين محمود\WhatsApp Image 2026-04-11 at 9.07.07 PM (8).jpeg" class="img-placeholder">
+          <div class="card-body">
+            <div class="field">فخذ سحب+شد</div>
+            <div class="field large">مره فتح مره شد</div>
+            <div class="field">4+4</div>
+            <div class="field">15+15</div>
+          </div>
+        </div>
+
+        <div class="card">
+          <img src="c:\Users\PC\OneDrive\Pictures\تمرين محمود\WhatsApp Image 2026-04-11 at 9.07.07 PM (10).jpeg" class="img-placeholder">
+          <div class="card-body">
+            <div class="field">بايسكل</div>
+            <div class="field large">فخذ+بطن</div>
+            <div class="field">1</div>
+            <div class="field">15د</div>
+          </div>
+        </div>
+
+        <div class="card">
+          <img src="c:\Users\PC\OneDrive\Pictures\تمرين محمود\WhatsApp Image 2026-04-11 at 9.07.07 PM (11).jpeg" class="img-placeholder">
+          <div class="card-body">
+            <div class="field">درج جهاز</div>
+            <div class="field large">رجل</div>
+            <div class="field">4</div>
+            <div class="field">20</div>
+          </div>
+        </div>
+
+        <div class="card">
+          <img src="c:\Users\PC\OneDrive\Pictures\تمرين محمود\body-weight-squats-1.webp" class="img-placeholder">
+          <div class="card-body">
+            <div class="field">وقوف جلوس</div>
+            <div class="field large">بطن فخذ</div>
+            <div class="field">4</div>
+            <div class="field">10</div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- الثلاثاء -->
+    <section class="day-section" id="tue">
+      <h2 class="day-title">الثلاثاء</h2>
+      <div class="cards-grid">
+
+        <div class="card">
+          <img src="c:\Users\PC\OneDrive\Pictures\تمرين محمود\نادي-Elite-Swim-Team-Kuwait-3.jpg" class="img-placeholder">
+          <div class="card-body">
+            <div class="field">سباحة</div>
+            <div class="field large">كل الجسم</div>
+            <div class="field">1</div>
+            <div class="field">ساعة</div>
+          </div>
+        </div>
+
+        <div class="card">
+          <img src="c:\Users\PC\OneDrive\Pictures\تمرين محمود\Sauna-1280x640.jpg" class="img-placeholder">
+          <div class="card-body">
+            <div class="field">ساونا</div>
+            <div class="field large">استرخاء</div>
+            <div class="field">1</div>
+            <div class="field">5د</div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- الأربعاء -->
+    <section class="day-section" id="wed">
+      <h2 class="day-title">الأربعاء</h2>
+      <div class="cards-grid">
+               <div class="card">
+          <img src="c:\Users\PC\OneDrive\Pictures\تمرين محمود\WhatsApp Image 2026-04-11 at 9.07.03 PM.jpeg" class="img-placeholder">
+          <div class="card-body">
+            <div class="field">بطن جهاز</div>
+            <div class="field large">بطن و ضهر</div>
+            <div class="field">4</div>
+            <div class="field">15</div>
+          </div>
+        </div>
+
+        <div class="card">
+          <img src="c:\Users\PC\OneDrive\Pictures\تمرين محمود\WhatsApp Image 2026-04-11 at 9.07.06 PM (1).jpeg" class="img-placeholder">
+          <div class="card-body">
+            <div class="field">بطن حركة</div>
+            <div class="field large">البطن</div>
+            <div class="field">4</div>
+            <div class="field">12</div>
+          </div>
+        </div>
+
+        <div class="card">
+          <img src="c:\Users\PC\OneDrive\Pictures\تمرين محمود\WhatsApp Image 2026-04-11 at 9.07.06 PM.jpeg" class="img-placeholder">
+          <div class="card-body">
+            <div class="field">رفع رجل</div>
+            <div class="field large">اسفل ضهر و بطن وفخذ</div>
+            <div class="field">4</div>
+            <div class="field">15</div>
+          </div>
+        </div>
+
+        <div class="card">
+          <img src="c:\Users\PC\OneDrive\Pictures\تمرين محمود\WhatsApp Image 2026-04-11 at 9.07.07 PM (1).jpeg" class="img-placeholder">
+          <div class="card-body">
+            <div class="field">بلانك</div>
+            <div class="field large">شد البطن والارداف</div>
+            <div class="field">3</div>
+            <div class="field">10ث</div>
+          </div>
+        </div>
+
+        <div class="card">
+          <img src="c:\Users\PC\OneDrive\Pictures\تمرين محمود\WhatsApp Image 2026-04-11 at 9.07.07 PM (2).jpeg" class="img-placeholder">
+          <div class="card-body">
+            <div class="field">ضهر جهاز</div>
+            <div class="field large">ضهر</div>
+            <div class="field">4</div>
+            <div class="field">15</div>
+          </div>
+        </div>
+
+        <div class="card">
+          <img src="c:\Users\PC\OneDrive\Pictures\تمرين محمود\WhatsApp Image 2026-04-11 at 9.07.07 PM (3).jpeg" class="img-placeholder">
+          <div class="card-body">
+            <div class="field">اوبتيكال</div>
+            <div class="field large">جسم كامل</div>
+            <div class="field">1</div>
+            <div class="field">15د</div>
+          </div>
+        </div>
+
+        <div class="card">
+          <img src="c:\Users\PC\OneDrive\Pictures\تمرين محمود\WhatsApp Image 2026-04-11 at 9.07.07 PM (4).jpeg" class="img-placeholder">
+          <div class="card-body">
+            <div class="field">جهاز مشي</div>
+            <div class="field large">سير</div>
+            <div class="field">1</div>
+            <div class="field">15د</div>
+          </div>
+        </div>
+
+        <div class="card">
+          <img src="c:\Users\PC\OneDrive\Pictures\تمرين محمود\WhatsApp Image 2026-04-11 at 9.07.07 PM.jpeg" class="img-placeholder">
+          <div class="card-body">
+            <div class="field">اسفل ضهر</div>
+            <div class="field large">عضله الارداف والضهر</div>
+            <div class="field">4</div>
+            <div class="field">10</div>
+          </div>
+        </div>
+
+        
+      </div>
+    </section>
+
+    <!-- الخميس -->
+    <section class="day-section" id="thu">
+      <h2 class="day-title">الخميس</h2>
+      <div class="cards-grid">
+
+        <div class="card">
+          <img src="c:\Users\PC\OneDrive\Pictures\تمرين محمود\WhatsApp Image 2026-04-11 at 9.07.07 PM (12).jpeg" class="img-placeholder">
+          <div class="card-body">
+            <div class="field">صدر</div>
+            <div class="field large">صدر وباي</div>
+            <div class="field">4</div>
+            <div class="field">12</div>
+          </div>
+        </div>
+
+        <div class="card">
+          <img src="c:\Users\PC\OneDrive\Pictures\تمرين محمود\WhatsApp Image 2026-04-11 at 9.07.07 PM (13).jpeg" class="img-placeholder">
+          <div class="card-body">
+            <div class="field">كتف</div>
+            <div class="field large">كتف+باي+صدر</div>
+            <div class="field">4</div>
+            <div class="field">12</div>
+          </div>
+        </div>
+
+        <div class="card">
+          <img src="c:\Users\PC\OneDrive\Pictures\تمرين محمود\WhatsApp Image 2026-04-11 at 9.07.07 PM (14).jpeg" class="img-placeholder">
+          <div class="card-body">
+            <div class="field">سحب تراي</div>
+            <div class="field large">عضلة تراي</div>
+            <div class="field">4</div>
+            <div class="field">15</div>
+          </div>
+        </div>
+
+        <div class="card">
+          <img src="c:\Users\PC\OneDrive\Pictures\تمرين محمود\WhatsApp Image 2026-04-11 at 9.07.07 PM (15).jpeg" class="img-placeholder">
+          <div class="card-body">
+            <div class="field">سحب كتف</div>
+            <div class="field large">كتف+تراي+صدر</div>
+            <div class="field">4</div>
+            <div class="field">15</div>
+          </div>
+        </div>
+
+        <div class="card">
+          <img src="c:\Users\PC\OneDrive\Pictures\تمرين محمود\WhatsApp Image 2026-04-11 at 9.07.07 PM (16).jpeg" class="img-placeholder">
+          <div class="card-body">
+            <div class="field">تراي</div>
+            <div class="field large">عضل تراي</div>
+            <div class="field">4</div>
+            <div class="field">15</div>
+          </div>
+        </div>
+
+        <div class="card">
+          <img src="c:\Users\PC\OneDrive\Pictures\تمرين محمود\WhatsApp Image 2026-04-11 at 9.07.07 PM (17).jpeg" class="img-placeholder">
+          <div class="card-body">
+            <div class="field">باي</div>
+            <div class="field large">عضلة الباي</div>
+            <div class="field">4</div>
+            <div class="field">15</div>
+          </div>
+        </div>
+
+        <div class="card">
+          <img src="c:\Users\PC\OneDrive\Pictures\تمرين محمود\WhatsApp Image 2026-04-11 at 9.07.07 PM (18).jpeg" class="img-placeholder">
+          <div class="card-body">
+            <div class="field">عقلة</div>
+            <div class="field large">زيادة الطول</div>
+            <div class="field">4</div>
+            <div class="field">5ث</div>
+          </div>
+        </div>
+
+      <div class="card">
+          <img src="c:\Users\PC\OneDrive\Pictures\تمرين محمود\hometrainer-life-fitness-r1-liegend.jpg" class="img-placeholder">
+          <div class="card-body">
+            <div class="field">بايسكل</div>
+            <div class="field large">فخذ</div>
+            <div class="field">1</div>
+            <div class="field">15د</div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <div class="footer">
+      HTML Weekly Workout Layout
+    </div>
+
+  </div>
+</body>
+</html>
